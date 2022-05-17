@@ -10,7 +10,9 @@ public class Main {
         String[] testCase04 = {"90", "4", "5", "+", "/"};   // 90 / (4 + 5) = 10
 
         Claire claire = new Claire();
+        Clear clear = new Clear();
 
         System.out.println(claire.eval(testCase04));
+        System.out.println(clear.eval(testCase04));
     }
 }
