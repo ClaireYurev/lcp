@@ -1,0 +1,32 @@
+class Solution {
+  
+  private static final Map<Integer, BiFunction<Integer, Integer, Integer>> OPS = new HashMap<>();
+  
+  static {
+    OPS.put("+", (a, b) -> a + b);
+    OPS.put("-", (a, b) -> a - b);
+    OPS.put("*", (a, b) -> a * b);
+    OPS.put("/", (a, b) -> a / b);
+  }
+  
+  public int eval(String[] tokens) {
+    Deque<Integer> stack = new ArrayDeque<>();
+    
+    for (String token : tokens) {
+      
+      if (!OPS.containsKey(token)) {
+        stack.push(token);
+        continue;
+      }
+      
+      int second = stack.pop();
+      int first = stack.pop();
+      
+      BiFunction<Integer, Integer, Integer> operation = OPS.get(token);
+            
+      int result = operation.apply(first, second);
+      stack.push(result);
+    }
+    return stack.pop();
+  }
+}
