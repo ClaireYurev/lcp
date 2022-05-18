@@ -16,7 +16,7 @@ class Solution {
     Deque<Integer> stack = new ArrayDeque<>();
     
     for (String token : tokens) {
-      if (!OPERATIONS.contains(token)) {
+      if (!OPERATIONS.containsKey(token)) {
         stack.push(Integer.parseInt(token));
         continue;
       }
