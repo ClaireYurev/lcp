@@ -1,6 +1,7 @@
 package com.claireyurev;
 
 import java.util.HashMap;
+
 import java.util.Map;
 
 class Cake {
@@ -9,7 +10,7 @@ class Cake {
   
   public long fib(int n) {
   
-    if (n <= 2)
+    if (n <= 2) // or n < 3
       return 1;
     
     if (memo.containsKey(n))
